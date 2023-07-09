@@ -12,4 +12,4 @@ COPY . .
 #CMD ["python3", "-m" , "flask", "run", "--host=0.0.0.0"]
 
 CMD [ "chmod", "+x", "run.sh" ]
-ENTRYPOINT /app/run.sh
+ENTRYPOINT run.sh
