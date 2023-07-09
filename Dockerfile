@@ -1,6 +1,7 @@
 # syntax=docker/dockerfile:1
 FROM python:3.8-slim-buster
 
+RUN echo "DOCKERFILE executing"
 WORKDIR /app
 
 COPY requirements.txt requirements.txt
@@ -10,5 +11,5 @@ COPY . .
 
 #CMD ["python3", "-m" , "flask", "run", "--host=0.0.0.0"]
 
-CMD [ "chmod", "+x", "/app/run.sh" ]
+CMD [ "chmod", "+x", "run.sh" ]
 ENTRYPOINT /app/run.sh
