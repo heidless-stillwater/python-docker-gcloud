@@ -1,1 +1,1 @@
-docker run --publish 3003:5000 python-docker
+docker run --publish 3003:5000 python-docker-gcloud
