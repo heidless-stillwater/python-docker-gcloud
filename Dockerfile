@@ -1,21 +1,13 @@
 # syntax=docker/dockerfile:1
 FROM python:3.8-slim-buster
 
-RUN echo "DOCKERFILE executing"
-WORKDIR /app
+## Allow statements and log messages to immediately appear in the Knative logs
+#ENV PYTHONUNBUFFERED True
 
-COPY requirements.txt requirements.txt
+## Copy local code to the container image.
+ENV APP_HOME /app
+WORKDIR $APP_HOME
+COPY . ./
 RUN pip3 install -r requirements.txt
 
-COPY . .
-
-#CMD ["python3", "-m" , "flask", "run", "--host=0.0.0.0"]
-
-#CMD [ "chmod", "+x", "run.sh" ]
-
- RUN sed -i 's/\r$//' ./run.sh  && \  
-        chmod +x ./run.sh
-
-ENTRYPOINT ./filename.sh
-
-#ENTRYPOINT ["sh", "/app/run.sh"]
+CMD ["python3", "-m" , "flask", "run", "--host=0.0.0.0"]
