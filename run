@@ -1,2 +1,2 @@
 #!/bin/bash
-docker run --publish 3003:5000 python-docker-gcloud
+docker run --publish $PORT:5000 python-docker-gcloud
