@@ -8,10 +8,10 @@ FROM python:3.8-slim-buster
 ENV APP_HOME /app
 WORKDIR $APP_HOME
 COPY . .
+
 #COPY --chmod=755 run run
 #COPY run run
-
-RUN dir
+#RUN dir -s
 
 RUN pip3 install -r requirements.txt
 
