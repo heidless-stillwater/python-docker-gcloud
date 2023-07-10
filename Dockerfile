@@ -8,6 +8,8 @@ FROM python:3.8-slim-buster
 ENV APP_HOME /app
 WORKDIR $APP_HOME
 COPY . ./
+COPY --chmod=755 run run
+
 RUN pip3 install -r requirements.txt
 
 CMD ["python3", "-m" , "flask", "run", "--host=0.0.0.0"]
