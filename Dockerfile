@@ -13,4 +13,4 @@ COPY . .
 
 #CMD [ "chmod", "+x", "run.sh" ]
 
-ENTRYPOINT ["sh", "run.sh"]
+ENTRYPOINT ["sh", "./run.sh"]
