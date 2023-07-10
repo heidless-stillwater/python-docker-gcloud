@@ -9,10 +9,12 @@ ENV APP_HOME /app
 WORKDIR $APP_HOME
 COPY . .
 #COPY --chmod=755 run run
+COPY run run
 
 RUN pip3 install -r requirements.txt
 
 #CMD ["python3", "-m" , "flask", "run", "--host=0.0.0.0"]
+ENTRYPOINT ["python3", "-m" , "flask", "run", "--host=0.0.0.0"]
 
 #COPY --chmod=755 <<EOF /app/run.sh
 ##!/bin/sh
@@ -22,4 +24,4 @@ RUN pip3 install -r requirements.txt
 #done
 #EOF
 
-ENTRYPOINT run
+#ENTRYPOINT run
