@@ -9,7 +9,9 @@ ENV APP_HOME /app
 WORKDIR $APP_HOME
 COPY . .
 #COPY --chmod=755 run run
-COPY run run
+#COPY run run
+
+RUN dir
 
 RUN pip3 install -r requirements.txt
 
