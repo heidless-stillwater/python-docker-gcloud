@@ -13,4 +13,9 @@ COPY . .
 
 #CMD [ "chmod", "+x", "run.sh" ]
 
-ENTRYPOINT ["sh", "/app/run.sh"]
+ RUN sed -i 's/\r$//' ./run.sh  && \  
+        chmod +x ./run.sh
+
+ENTRYPOINT ./filename.sh
+
+#ENTRYPOINT ["sh", "/app/run.sh"]
